@@ -15,18 +15,11 @@ block/AES:
   - name: DOUTR
     description: Data output register
     byte_offset: 12
-  - name: KEYR
-    description: Key register
+  - name: KEYR1
+    description: Key register 0-127
     array:
-      offsets:
-      - 0
-      - 4
-      - 8
-      - 12
-      - 32
-      - 36
-      - 40
-      - 44
+      len: 4
+      stride: 4
     byte_offset: 16
   - name: IVR
     description: Initialization vector register
@@ -34,6 +27,12 @@ block/AES:
       len: 4
       stride: 4
     byte_offset: 32
+  - name: KEYR2
+    description: Key register 128-255
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 48
   - name: SUSPR
     description: Suspend register
     array:
